@@ -1,0 +1,4 @@
+.env*
+secrets.js
+.claude/
+node_modules/

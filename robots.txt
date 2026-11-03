@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yarik002.github.io/sitemap.xml
