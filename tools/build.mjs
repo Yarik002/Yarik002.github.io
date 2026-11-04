@@ -432,7 +432,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   for (const [file, make] of Object.entries(OUT)) {
     const html = make();
     const path = ROOT + file;
-    const old = existsSync(path) ? readFileSync(path, 'utf8') : '';
+    const old = existsSync(path) ? readFileSync(path, 'utf8').replace(/\r\n/g, '\n') : '';   // git на Windows ставит CRLF
     if (old === html) continue;
     stale++;
     if (check) { console.error('устарел: ' + file); continue; }
