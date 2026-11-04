@@ -1,9 +1,9 @@
 // Тексты интерфейса для сборки страниц. Данные (услуги, проекты, FAQ) — в assets/js/data.js.
 export const S = {
   ru: {
-    title: 'Сайты и Telegram-боты на заказ в Минске · Ярослав Кирдун',
+    title: 'Сайты и Telegram-боты на заказ в Минске · Kirdun.dev',
     desc: 'Разработчик из Минска. Telegram-боты от {bot}, сайты под ключ от {site}, парсеры от {parser}. Бесплатное демо до оплаты, пакеты с ценами, калькулятор и заказ в Telegram.',
-    ogTitle: 'Сайты и Telegram-боты на заказ · Ярослав Кирдун',
+    ogTitle: 'Сайты и Telegram-боты на заказ · Kirdun.dev',
     ogDesc: 'Бесплатное демо до оплаты, пакеты с понятной ценой и заказ в Telegram в одно нажатие.',
     skip: 'К содержимому',
     nav: [['work', 'Работы'], ['prices', 'Цены'], ['calc', 'Калькулятор'], ['process', 'Как работаю'], ['faq', 'Вопросы']],
@@ -34,7 +34,7 @@ export const S = {
     result: 'Примерная смета', days: 'Срок', send: 'Отправить смету в Telegram', sendNote: 'Это ориентир, а не оферта. Точную цену назову после пары вопросов.', base: 'База',
     procEye: 'Процесс', procH: 'Как я работаю', procLead: 'Без сюрпризов: результат видно до оплаты и на каждом шаге.',
     aboutEye: 'Обо мне', aboutH: 'Пишете напрямую тому, кто делает',
-    about: ['Я Ярослав Кирдун, разработчик из Минска. Учусь в IT-колледже и параллельно запускаю свои продукты: AI-стража Telegram-групп Кордон, бота для поиска работы Оффер и бота, который принимает заявки с этого сайта.', 'Пишу на Python и JavaScript: Telegram-боты, сайты, парсеры, автоматизация. Работаю один, поэтому без менеджеров, испорченного телефона и наценок студии.'],
+    about: ['Меня зовут Ярослав, я разработчик из Минска и автор Kirdun.dev. Учусь в IT-колледже и параллельно запускаю свои продукты: AI-стража Telegram-групп Кордон, бота для поиска работы Оффер и бота, который принимает заявки с этого сайта.', 'Пишу на Python и JavaScript: Telegram-боты, сайты, парсеры, автоматизация. Работаю один, поэтому без менеджеров, испорченного телефона и наценок студии.'],
     notH: 'Чего я не делаю', not: ['Спам-рассылки и накрутки', 'Инвайтинг и «бомберы»', 'Сбор чужих личных данных', 'Обещания «в топ за неделю»'],
     payH: 'Оплата', pay: [['Telegram Stars', 'Счёт приходит в бот, оплатить можно из любой страны.'], ['ЕРИП', 'Для Беларуси. Реквизиты присылаю в бот после согласования.'], ['Перевод на карту', 'По договорённости, реквизиты тоже в боте.'], ['Другие страны', 'Россия, Казахстан и не только: подберём удобный способ.']],
     npd: 'Работаю как самозанятый, выдаю чек.',
@@ -46,9 +46,9 @@ export const S = {
     noscript: 'Включите JavaScript для калькулятора или напишите в бот:',
   },
   en: {
-    title: 'Websites & Telegram Bots for Hire · Yaroslav Kirdun, Minsk',
+    title: 'Websites & Telegram Bots for Hire in Minsk · Kirdun.dev',
     desc: 'Freelance developer in Minsk, Belarus: Telegram bots from {bot}, websites from {site}, web scrapers from {parser}. Free demo before you pay, clear packages, instant estimate, order on Telegram.',
-    ogTitle: 'Websites & Telegram bots for hire · Yaroslav Kirdun',
+    ogTitle: 'Websites & Telegram bots for hire · Kirdun.dev',
     ogDesc: 'A free demo before you pay, packages with clear prices, and ordering on Telegram in one tap.',
     skip: 'Skip to content',
     nav: [['work', 'Work'], ['prices', 'Pricing'], ['calc', 'Calculator'], ['process', 'Process'], ['faq', 'FAQ']],
@@ -79,7 +79,7 @@ export const S = {
     result: 'Rough estimate', days: 'Time', send: 'Send estimate on Telegram', sendNote: 'This is a guide, not an offer. I\'ll name the exact price after a couple of questions.', base: 'Base',
     procEye: 'Process', procH: 'How I work', procLead: 'No surprises: you see the result before paying and at every step.',
     aboutEye: 'About', aboutH: 'You talk directly to the person who builds it',
-    about: ['I\'m Yaroslav Kirdun, a developer from Minsk. I study at an IT college and run my own products: Kordon, an AI guard for Telegram groups; Offer, a job search bot; and the bot that takes requests from this site.', 'I write Python and JavaScript: Telegram bots, websites, scrapers, automation. I work solo, so there are no managers, no broken telephone and no agency markup.'],
+    about: ['I\'m Yaroslav, a developer from Minsk and the person behind Kirdun.dev. I study at an IT college and run my own products: Kordon, an AI guard for Telegram groups; Offer, a job search bot; and the bot that takes requests from this site.', 'I write Python and JavaScript: Telegram bots, websites, scrapers, automation. I work solo, so there are no managers, no broken telephone and no agency markup.'],
     notH: 'What I don\'t do', not: ['Spam and fake followers', 'Mass inviting and "bombers"', 'Collecting other people\'s personal data', 'Promises of "top of Google in a week"'],
     payH: 'Payment', pay: [['Telegram Stars', 'The invoice comes to the bot; pay from any country.'], ['Bank transfer', 'Details come to the bot after we agree.'], ['ERIP (Belarus)', 'For clients in Belarus, details after we agree.'], ['Other ways', 'We\'ll find a convenient method together.']],
     npd: 'Registered self-employed, receipts provided.',

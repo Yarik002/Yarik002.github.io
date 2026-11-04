@@ -55,7 +55,7 @@ function head(lang, L) {
 <link rel="alternate" hreflang="x-default" href="${C.site}">
 <meta name="theme-color" content="#f6f5f1">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="${esc(t(C.name, lang))}">
+<meta property="og:site_name" content="${esc(C.brand)}">
 <meta property="og:locale" content="${lang === 'en' ? 'en_US' : 'ru_RU'}">
 <meta property="og:title" content="${esc(L.ogTitle)}">
 <meta property="og:description" content="${esc(L.ogDesc)}">
@@ -95,7 +95,7 @@ function header(lang, L) {
   const other = lang === 'en' ? '/' : '/en/';
   return `<header class="top">
   <div class="wrap top-in">
-    <a class="logo" href="${lang === 'en' ? '/en/' : '/'}"><span class="logo-mark" aria-hidden="true">ЯК</span><span class="logo-name">${esc(t(C.name, lang))}</span></a>
+    <a class="logo" href="${lang === 'en' ? '/en/' : '/'}"><span class="logo-mark" aria-hidden="true">K</span><span class="logo-name">Kirdun<span>.dev</span></span></a>
     <nav class="nav" id="nav" aria-label="${esc(L.navLabel)}">
       ${L.nav.map(([id, label]) => `<a href="#${id}">${esc(label)}</a>`).join('\n      ')}
     </nav>
@@ -360,7 +360,7 @@ function final(lang, L) {
 function footer(lang, L) {
   return `<footer class="foot">
   <div class="wrap foot-in">
-    <p>© ${new Date().getFullYear()} ${esc(t(C.name, lang))} · ${esc(L.city)}</p>
+    <p>© ${new Date().getFullYear()} ${esc(C.brand)} · ${esc(L.city)}</p>
     <p class="foot-links">
       <a href="${BOT(lang === 'en' ? 'site_en' : 'site')}" target="_blank" rel="noopener">${esc(L.footBot)}</a>
       <a href="https://github.com/${C.github}" target="_blank" rel="noopener">GitHub</a>
