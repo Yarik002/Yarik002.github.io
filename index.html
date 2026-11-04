@@ -1,270 +1,560 @@
 <!doctype html>
+<!-- Собрано tools/build.mjs из assets/js/data.js и config.js. Правки вносить там и пересобирать: node tools/build.mjs -->
 <html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ярослав Кирдун · сайты, Telegram-боты, автоматизация</title>
-<meta name="description" content="Делаю сайты под ключ, Telegram-ботов, парсеры, видеоролики и AI-визуал. Живые проекты, честные цены, калькулятор стоимости и заказ в Telegram.">
-<meta name="theme-color" content="#08090b">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ярослав Кирдун · сайты, боты, автоматизация">
-<meta property="og:description" content="Живые проекты, услуги с ценами и калькулятор. Заказ в один клик через Telegram.">
-<meta property="og:image" content="https://yarik002.github.io/assets/img/og.png">
-<meta property="og:url" content="https://yarik002.github.io/">
+<title>Сайты и Telegram-боты на заказ в Минске · Ярослав Кирдун</title>
+<meta name="description" content="Разработчик из Минска. Telegram-боты от 200 BYN, сайты под ключ от 250 BYN, парсеры от 120 BYN. Бесплатное демо до оплаты, пакеты с ценами, калькулятор и заказ в Telegram.">
 <link rel="canonical" href="https://yarik002.github.io/">
 <link rel="alternate" hreflang="ru" href="https://yarik002.github.io/">
-<link rel="alternate" hreflang="en" href="https://yarik002.github.io/?lang=en">
+<link rel="alternate" hreflang="en" href="https://yarik002.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://yarik002.github.io/">
+<meta name="theme-color" content="#f6f5f1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ярослав Кирдун">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Сайты и Telegram-боты на заказ · Ярослав Кирдун">
+<meta property="og:description" content="Бесплатное демо до оплаты, пакеты с понятной ценой и заказ в Telegram в одно нажатие.">
+<meta property="og:image" content="https://yarik002.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://yarik002.github.io/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta name="twitter:title" content="Сайты и Telegram-боты на заказ · Ярослав Кирдун">
+<meta name="twitter:description" content="Бесплатное демо до оплаты, пакеты с понятной ценой и заказ в Telegram в одно нажатие.">
+<meta name="twitter:image" content="https://yarik002.github.io/assets/img/og.png">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=optional" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=optional"></noscript>
+<link rel="stylesheet" href="/assets/css/style.css">
+<script>if(/[?&]lang=en\b/.test(location.search))location.replace("/en/"+location.hash)</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://yarik002.github.io/#person","name":"Ярослав Кирдун","jobTitle":"Разработчик сайтов и Telegram-ботов","address":{"@type":"PostalAddress","addressLocality":"Минск","addressCountry":"BY"},"url":"https://yarik002.github.io/","sameAs":["https://github.com/Yarik002","https://t.me/KirdunSupportBot"]},{"@type":"ProfessionalService","@id":"https://yarik002.github.io/#service","name":"Сайты и Telegram-боты на заказ · Ярослав Кирдун","url":"https://yarik002.github.io/","image":"https://yarik002.github.io/assets/img/og.png","description":"Бесплатное демо до оплаты, пакеты с понятной ценой и заказ в Telegram в одно нажатие.","founder":{"@id":"https://yarik002.github.io/#person"},"areaServed":["BY","RU","KZ"],"address":{"@type":"PostalAddress","addressLocality":"Минск","addressCountry":"BY"},"priceRange":"40+ BYN","hasOfferCatalog":{"@type":"OfferCatalog","name":"Пакеты с понятной ценой","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Сайты под ключ","description":"Лендинг или сайт-визитка, который продаёт, а не просто висит."},"priceSpecification":{"@type":"PriceSpecification","minPrice":250,"priceCurrency":"BYN"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Telegram-боты","description":"Бот, который принимает заявки, отвечает клиентам и берёт оплату, пока вы спите."},"priceSpecification":{"@type":"PriceSpecification","minPrice":200,"priceCurrency":"BYN"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Парсеры и автоматизация","description":"Соберу данные с сайтов и уберу ручную рутину: таблицы, отчёты, уведомления."},"priceSpecification":{"@type":"PriceSpecification","minPrice":120,"priceCurrency":"BYN"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Видеомонтаж и реклама","description":"Короткие ролики для Reels, Shorts и TikTok, которые досматривают до конца."},"priceSpecification":{"@type":"PriceSpecification","minPrice":40,"priceCurrency":"BYN"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI-фото и визуал","description":"Картинки для соцсетей, карточек товаров и рекламы без фотостудии."},"priceSpecification":{"@type":"PriceSpecification","minPrice":50,"priceCurrency":"BYN"}}]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему у тебя дешевле, чем в студиях?","acceptedAnswer":{"@type":"Answer","text":"Я работаю один, без менеджеров и офиса. Платите за работу, а не за накладные расходы. Взамен прошу честный отзыв."}},{"@type":"Question","name":"А если результат не понравится?","acceptedAnswer":{"@type":"Answer","text":"Поэтому сначала бесплатное демо. Если не зашло, расходимся без оплаты. Дальше правки входят в цену."}},{"@type":"Question","name":"Исходники и доступы будут мои?","acceptedAnswer":{"@type":"Answer","text":"Да. Домен, хостинг, бот и код оформляются на вас, я передаю всё после оплаты."}},{"@type":"Question","name":"Работаешь с другими странами?","acceptedAnswer":{"@type":"Answer","text":"Да, с Беларусью, Россией, Казахстаном и не только. Общаемся в Telegram, способ оплаты обсудим."}},{"@type":"Question","name":"Где следить за заказом и как платить?","acceptedAnswer":{"@type":"Answer","text":"Всё в моём боте @KirdunSupportBot: заявка с номером, статус, вопросы и счёт. Оплата в Telegram Stars, через ЕРИП или переводом, реквизиты присылаю после согласования."}},{"@type":"Question","name":"Как быстро ты отвечаешь?","acceptedAnswer":{"@type":"Answer","text":"Обычно в течение пары часов днём по Минску. Ночью бот примет заявку и сразу покажет смету, а я отвечу утром."}},{"@type":"Question","name":"Что нужно от меня, чтобы начать?","acceptedAnswer":{"@type":"Answer","text":"Пара предложений о задаче и примеры того, что нравится. Остальное спрошу сам."}}]}]}</script>
 </head>
 <body>
-<div class="progress" aria-hidden="true"></div>
-<div class="bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="grid-lines"></span></div>
-<a class="skip" href="#main" data-i18n="skip">К содержимому</a>
-
+<a class="skip" href="#main">К содержимому</a>
 <header class="top">
   <div class="wrap top-in">
-    <a class="logo" href="#top" aria-label="На главную">
-      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="var(--accent)"/><path d="M10 9v16M10 17l9-8M13.5 14l7 11" stroke="#08090b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="25" cy="25" r="2.4" fill="#08090b"/></svg>
-      <span><b>kirdun</b><i>.dev</i></span>
-    </a>
+    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true">ЯК</span><span class="logo-name">Ярослав Кирдун</span></a>
     <nav class="nav" id="nav" aria-label="Разделы">
-      <a href="#work" data-i18n="nav.work">Работы</a>
-      <a href="#services" data-i18n="nav.services">Услуги</a>
-      <a href="#calc" data-i18n="nav.calc">Калькулятор</a>
-      <a href="#process" data-i18n="nav.process">Процесс</a>
-      <a href="#diary" data-i18n="nav.diary">Дневник</a>
+      <a href="#work">Работы</a>
+      <a href="#prices">Цены</a>
+      <a href="#calc">Калькулятор</a>
+      <a href="#process">Как работаю</a>
+      <a href="#faq">Вопросы</a>
     </nav>
     <div class="top-actions">
-      <div class="langs" role="group" aria-label="Language">
-        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
-      <a class="btn btn-sm btn-accent tg-link magnetic" href="https://t.me/usernaaamer" target="_blank" rel="noopener"><span data-i18n="cta.write">Написать</span></a>
+      <a class="lang" href="/en/" hreflang="en" lang="en">EN</a>
+      <a class="btn btn-sm btn-dark" href="https://t.me/KirdunSupportBot?start=site" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.5 4.2 18.4 19c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 12.7l-4.7-1.5c-1-.3-1-1 .2-1.5L20.1 2.6c.9-.3 1.6.2 1.4 1.6z"/></svg><span>Написать</span></a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Меню"><span></span><span></span></button>
     </div>
   </div>
 </header>
-
 <main id="main">
 <section class="hero" id="top">
   <div class="wrap hero-in">
-    <div class="hero-head">
-      <p class="pill" id="status"><span class="dot"></span><span data-i18n="hero.status">Принимаю заказы · Минск и онлайн</span></p>
-      <h1 class="hero-title">
-        <span class="line"><span data-i18n="hero.t1">Сайты, боты</span></span>
-        <span class="line"><span data-i18n="hero.t2">и ролики, которые</span></span>
-        <span class="line"><span class="accent-word" data-i18n="hero.t3">приводят клиентов</span></span>
-      </h1>
-    </div>
     <div class="hero-copy">
-      <p class="hero-sub" data-i18n="hero.sub">Я Ярослав, разработчик из Минска. Делаю под ключ: от идеи до запуска. Мои проекты уже работают в Telegram, их можно потрогать прямо здесь.</p>
-      <div class="hero-cta">
-        <a class="btn btn-accent btn-lg magnetic" href="#calc"><span data-i18n="cta.calc">Рассчитать стоимость</span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a class="btn btn-ghost btn-lg tg-link" href="https://t.me/usernaaamer" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.5 4.2 18.4 19c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 12.7l-4.7-1.5c-1-.3-1-1 .2-1.5L20.1 2.6c.9-.3 1.6.2 1.4 1.6z"/></svg><span data-i18n="cta.tg">Написать в Telegram</span></a>
+      <p class="pill"><span class="dot" aria-hidden="true"></span>Принимаю заказы · отвечаю за пару часов</p>
+      <h1>Сайты и Telegram‑боты на заказ, <span class="hl">которые приводят клиентов</span></h1>
+      <p class="lead">Я Ярослав, разработчик из Минска. Делаю сам, от идеи до запуска: без менеджеров и наценок студии. Бот от 200 BYN, лендинг от 250 BYN.</p>
+      <div class="cta-row">
+        <a class="btn btn-accent btn-lg" href="https://t.me/KirdunSupportBot?start=demo" target="_blank" rel="noopener" data-goal="demo"><span>Получить бесплатное демо</span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#calc">Посчитать стоимость</a>
       </div>
-      <dl class="stats">
-        <div><dt class="count" data-to="3">3</dt><dd data-i18n="stat.live">проекта работают в проде</dd></div>
-        <div><dt class="count" data-to="10">10</dt><dd data-i18n="stat.port">проектов в портфолио</dd></div>
-        <div><dt><span class="count" data-to="150">150</span>+</dt><dd data-i18n="stat.tests">автотестов в Кордоне</dd></div>
-      </dl>
+      <ul class="guarantees">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Демо бесплатно. Не понравилось, ничего не платите</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Предоплата 50%, остаток после запуска</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>14 дней правок бесплатно</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Код, домен и бот оформлены на вас</span></li>
+      </ul>
     </div>
-
     <div class="demo" id="demo">
       <div class="demo-head">
         <span class="demo-ava" aria-hidden="true">K</span>
-        <div><b data-i18n="demo.title">Кордон · живое демо</b><small data-i18n="demo.sub">проверь сообщение на скам</small></div>
+        <div><b>Кордон · живое демо</b><small>Попробуйте сами: вставьте сообщение из чата</small></div>
         <span class="live-dot" aria-hidden="true"></span>
       </div>
       <div class="demo-chat" id="demoChat" aria-live="polite"></div>
       <div class="demo-chips" id="demoChips"></div>
       <form class="demo-input" id="demoForm">
-        <label class="vh" for="demoMsg" data-i18n="demo.label">Сообщение для проверки</label>
-        <input id="demoMsg" name="msg" autocomplete="off" maxlength="300" data-i18n-ph="demo.ph" placeholder="Вставь подозрительное сообщение…">
-        <button type="submit" aria-label="Проверить"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <label class="vh" for="demoMsg">Сообщение для проверки</label>
+        <input id="demoMsg" name="msg" autocomplete="off" maxlength="300" placeholder="Вставьте подозрительное сообщение…">
+        <button type="submit" aria-label="Проверить"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </form>
-      <p class="demo-note" data-i18n="demo.note">Упрощённая версия в браузере. Настоящий бот ещё сверяет базу спамеров и спрашивает AI: <a href="https://t.me/KordonAIBot" target="_blank" rel="noopener">@KordonAIBot</a></p>
+      <p class="demo-note">Упрощённая версия в браузере. Настоящий бот ещё сверяет базу спамеров и спрашивает AI: <a href="https://t.me/KordonAIBot" target="_blank" rel="noopener">@KordonAIBot</a></p>
     </div>
   </div>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track" id="marquee"></div>
+  <div class="wrap">
+    <dl class="proof">
+      <div><dt>3</dt><dd>проекта работают в проде</dd></div>
+      <div><dt>187</dt><dd>автотестов в Кордоне</dd></div>
+      <div><dt>95</dt><dd>Lighthouse у лендинга Кварты</dd></div>
+      <div><dt>24/7</dt><dd>заявки с сайта принимает мой бот</dd></div>
+    </dl>
   </div>
 </section>
-
-<section class="section" id="work">
+<section class="sec" id="work">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">01 / <span data-i18n="nav.work">Работы</span></p>
-      <h2 data-i18n="work.h">Не макеты, а то, что уже работает</h2>
-      <p class="sec-lead" data-i18n="work.lead">Ботом можно написать, на сайт зайти, код открыть на GitHub. Новые проекты добавляю сюда по ходу пути.</p>
+    <div class="sec-head">
+      <p class="eyebrow">Работы</p>
+      <h2>Не макеты, а то, что уже работает</h2>
+      <p class="sec-lead">Ботом можно написать, на сайт зайти, код открыть на GitHub.</p>
     </div>
-    <div class="filters" role="group" aria-label="Фильтр" id="filters">
-      <button type="button" data-f="all" aria-pressed="true" data-i18n="f.all">Все</button>
-      <button type="button" data-f="bots" aria-pressed="false" data-i18n="f.bots">Боты</button>
-      <button type="button" data-f="sites" aria-pressed="false" data-i18n="f.sites">Сайты</button>
-      <button type="button" data-f="auto" aria-pressed="false" data-i18n="f.auto">Автоматизация</button>
-    </div>
-    <div class="projects" id="projects"></div>
-  </div>
-</section>
-
-<section class="section" id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">02 / <span data-i18n="nav.services">Услуги</span></p>
-      <h2 data-i18n="srv.h">Что я могу сделать для вашего бизнеса</h2>
-      <p class="sec-lead" data-i18n="srv.lead">Цены «от»: точная сумма зависит от задачи. Первым клиентам скидка 20% в обмен на честный отзыв.</p>
-    </div>
-    <div class="cur" role="group" aria-label="Валюта" id="cur">
-      <button type="button" data-cur="BYN" aria-pressed="true">BYN</button>
-      <button type="button" data-cur="RUB" aria-pressed="false">₽</button>
-      <button type="button" data-cur="USD" aria-pressed="false">$</button>
-    </div>
-    <div class="services" id="servicesList"></div>
-  </div>
-</section>
-
-<section class="section calc-sec" id="calc">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">03 / <span data-i18n="nav.calc">Калькулятор</span></p>
-      <h2 data-i18n="calc.h">Посчитайте проект за минуту</h2>
-      <p class="sec-lead" data-i18n="calc.lead">Опишите задачу своими словами или соберите смету кнопками. Смета уйдёт мне в Telegram одним нажатием.</p>
-    </div>
-
-    <div class="calc reveal">
-      <div class="calc-left">
-        <div class="brief">
-          <label for="brief" class="field-label" data-i18n="calc.brief">Опишите задачу</label>
-          <textarea id="brief" name="brief" rows="3" maxlength="800" data-i18n-ph="calc.briefPh" placeholder="Например: нужен бот для записи в салон с оплатой и напоминаниями"></textarea>
-          <p class="brief-hint" id="briefHint" aria-live="polite"></p>
+    <div class="cases">
+      <article class="case reveal">
+        <div class="case-img"><img src="/assets/img/kordon.webp" srcset="/assets/img/kordon-640.webp 640w, /assets/img/kordon.webp 960w" sizes="(max-width: 960px) 92vw, 560px" alt="Кордон: AI-страж Telegram-групп" loading="lazy" decoding="async" width="960" height="600"></div>
+        <div class="case-body">
+          <p class="case-tag"><span class="badge live">работает</span>AI-страж Telegram-групп</p>
+          <h3>Кордон</h3>
+          <p>Встречает новичков анкетой, проверяет ответы через AI и базу спамеров, ловит скам. Работает 24/7 в облаке Telegram, оплата в Stars. Есть сайт и Mini App.</p>
+          <ul class="facts"><li>187 автотестов</li><li>Работает 24/7 в облаке Telegram</li><li>Оплата в Telegram Stars</li></ul>
+          <p class="stack">Telegram Serverless · JavaScript · SQLite · Gemini</p>
+          <div class="case-links"><a class="btn btn-sm btn-dark" href="https://t.me/KordonAIBot" target="_blank" rel="noopener">@KordonAIBot</a><a class="link" href="https://yarik002.github.io/kordon-site/" target="_blank" rel="noopener">Сайт</a></div>
         </div>
-
-        <fieldset class="types">
-          <legend class="field-label" data-i18n="calc.type">Что делаем</legend>
-          <div class="type-grid" id="typeGrid"></div>
-        </fieldset>
-
-        <div class="range-wrap" id="rangeWrap">
-          <div class="range-top"><label for="rangeInput" id="rangeLabel">Страниц</label><output id="rangeOut" for="rangeInput">1</output></div>
-          <input type="range" id="rangeInput" min="1" max="10" value="1">
+      </article>
+      <article class="case reveal">
+        <div class="case-img"><img src="/assets/img/offer.webp" srcset="/assets/img/offer-640.webp 640w, /assets/img/offer.webp 960w" sizes="(max-width: 960px) 92vw, 560px" alt="Оффер: AI-разбор резюме за 2 минуты" loading="lazy" decoding="async" width="960" height="600"></div>
+        <div class="case-body">
+          <p class="case-tag"><span class="badge live">работает</span>AI-разбор резюме за 2 минуты</p>
+          <h3>Оффер</h3>
+          <p>Бот разбирает резюме, даёт правки «было → стало», пишет письмо работодателю и подбирает свежие вакансии с rabota.by и hh.ru. Бот, сайт, админка, 4 тарифа.</p>
+          <ul class="facts"><li>Разбор резюме за 2 минуты</li><li>Бот, сайт и админка</li><li>4 тарифа</li></ul>
+          <p class="stack">Telegram Serverless · JavaScript · Gemini · GitHub Pages</p>
+          <div class="case-links"><a class="btn btn-sm btn-dark" href="https://t.me/OfferCareerBot" target="_blank" rel="noopener">@OfferCareerBot</a><a class="link" href="https://yarik002.github.io/offer-site/" target="_blank" rel="noopener">Сайт</a></div>
         </div>
-
-        <fieldset class="opts">
-          <legend class="field-label" data-i18n="calc.opts">Что добавить</legend>
-          <div class="opt-grid" id="optGrid"></div>
-        </fieldset>
-
-        <label class="urgent"><input type="checkbox" id="urgent"><span class="sw" aria-hidden="true"></span><span data-i18n="calc.urgent">Срочно (быстрее на 40%, цена +30%)</span></label>
+      </article>
+      <article class="case reveal">
+        <div class="case-img"><img src="/assets/img/kvarta.webp" srcset="/assets/img/kvarta-640.webp 640w, /assets/img/kvarta.webp 960w" sizes="(max-width: 960px) 92vw, 560px" alt="Кварта: Лендинг обжарки кофе (концепт)" loading="lazy" decoding="async" width="960" height="600"></div>
+        <div class="case-body">
+          <p class="case-tag"><span class="badge live">работает</span>Лендинг обжарки кофе (концепт)</p>
+          <h3>Кварта</h3>
+          <p>Тестовое задание для VitAi World. Форма заявки с маской телефона и UTM-метками, заявки сразу приходят в Telegram. Lighthouse Mobile 95.</p>
+          <ul class="facts"><li>Lighthouse Mobile 95</li><li>Заявки сразу в Telegram</li><li>UTM-метки</li></ul>
+          <p class="stack">Next.js · TypeScript · Tailwind · Vercel</p>
+          <div class="case-links"><a class="btn btn-sm btn-dark" href="https://kvarta-landing-psi.vercel.app" target="_blank" rel="noopener">Сайт</a><a class="link" href="https://github.com/Yarik002/kvarta-landing" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </article>
+    </div>
+    <h3 class="more-h">Ещё проекты</h3>
+    <div class="more">
+      <article class="mini reveal">
+        <p class="mini-top"><b>SmartCoin AI</b><span class="badge code">код</span></p>
+        <p class="mini-tag">Бот учёта расходов</p>
+        <p class="mini-text">Трата голосом, текстом или фото чека: AI сам ставит сумму и категорию. Баланс, история, Premium-советник по финансам.</p>
+        <p class="stack">Python · aiogram · PostgreSQL · Docker · Gemini</p>
+        <a class="link" href="https://github.com/Yarik002/ai-expense-tracker" target="_blank" rel="noopener">GitHub →</a>
+      </article>
+      <article class="mini reveal">
+        <p class="mini-top"><b>Voice Summary Bot</b><span class="badge code">код</span></p>
+        <p class="mini-tag">Голосовые в текст и выжимку</p>
+        <p class="mini-text">Расшифровывает голосовые сообщения и присылает короткую выжимку, чтобы не слушать пятиминутные аудио.</p>
+        <p class="stack">Python · Groq · Llama 3 · ffmpeg</p>
+        <a class="link" href="https://github.com/Yarik002/Voice-Summary-Bot" target="_blank" rel="noopener">GitHub →</a>
+      </article>
+      <article class="mini reveal">
+        <p class="mini-top"><b>ProfiBot</b><span class="badge code">код</span></p>
+        <p class="mini-tag">AI-ассистент в Telegram</p>
+        <p class="mini-text">Отвечает на вопросы, показывает погоду, генерирует картинки. Есть админ-панель.</p>
+        <p class="stack">Python · OpenRouter · SQLite</p>
+        <a class="link" href="https://github.com/Yarik002/ProfiBot" target="_blank" rel="noopener">GitHub →</a>
+      </article>
+      <article class="mini reveal">
+        <p class="mini-top"><b>Deribit Price Service</b><span class="badge code">код</span></p>
+        <p class="mini-tag">Сбор цен BTC/ETH каждую минуту</p>
+        <p class="mini-text">Сервис сам забирает цены с биржи, хранит историю в PostgreSQL и отдаёт её по API. 6 контейнеров, 120+ тестов.</p>
+        <p class="stack">FastAPI · Celery · Redis · PostgreSQL · Docker</p>
+        <a class="link" href="https://github.com/Yarik002/deribit-price-service" target="_blank" rel="noopener">GitHub →</a>
+      </article>
+      <article class="mini reveal">
+        <p class="mini-top"><b>CSV Video Recorder</b><span class="badge code">код</span></p>
+        <p class="mini-tag">Автоматизация браузера</p>
+        <p class="mini-text">Берёт сценарий из CSV, сам проходит его в браузере и записывает видео. Удобно для демо и проверки сайтов.</p>
+        <p class="stack">Python · Playwright</p>
+        <a class="link" href="https://github.com/Yarik002/csv-video-recorder" target="_blank" rel="noopener">GitHub →</a>
+      </article>
+      <article class="mini reveal">
+        <p class="mini-top"><b>Product Card Assistant</b><span class="badge code">код</span></p>
+        <p class="mini-tag">Карточки товаров через LLM</p>
+        <p class="mini-text">Черновик карточки товара для магазина: LLM пишет текст, код проверяет, чтобы модель не выдумывала характеристики.</p>
+        <p class="stack">Python · LLM</p>
+        <a class="link" href="https://github.com/Yarik002/product-card-assistant" target="_blank" rel="noopener">GitHub →</a>
+      </article>
+      <article class="mini reveal">
+        <p class="mini-top"><b>Job Search AI</b><span class="badge private">личный</span></p>
+        <p class="mini-tag">Свой парсер вакансий</p>
+        <p class="mini-text">Собирает вакансии с 7 сайтов, считает совпадение с резюме и готовит письмо под каждую. Личный инструмент, показываю на созвоне.</p>
+        <p class="stack">Python · requests · BeautifulSoup · pandas</p>
+        
+      </article>
+    </div>
+    <p class="center"><a class="link" href="https://github.com/Yarik002" target="_blank" rel="noopener">Все проекты на GitHub →</a></p>
+  </div>
+</section>
+<section class="sec" id="prices">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Цены</p>
+      <h2>Пакеты с понятной ценой</h2>
+      <p class="sec-lead">Цена «от» и срок посчитаны той же формулой, что калькулятор. Точную сумму назову после пары вопросов. Первым клиентам скидка 20% за честный отзыв.</p>
+    </div>
+    <div class="price-bar">
+      <div class="tabs" role="tablist" aria-label="Услуги">
+        <button type="button" role="tab" id="tab-bot" aria-controls="panel-bot" aria-selected="true">Боты</button>
+        <button type="button" role="tab" id="tab-site" aria-controls="panel-site" aria-selected="false" tabindex="-1">Сайты</button>
+        <button type="button" role="tab" id="tab-parser" aria-controls="panel-parser" aria-selected="false" tabindex="-1">Парсеры</button>
+        <button type="button" role="tab" id="tab-video" aria-controls="panel-video" aria-selected="false" tabindex="-1">Видео</button>
+        <button type="button" role="tab" id="tab-visual" aria-controls="panel-visual" aria-selected="false" tabindex="-1">AI-визуал</button>
       </div>
-
+      <div class="cur" role="group" aria-label="Валюта">
+        <button type="button" data-cur="BYN" aria-pressed="true">BYN</button><button type="button" data-cur="RUB" aria-pressed="false">₽</button><button type="button" data-cur="USD" aria-pressed="false">$</button>
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="panel-bot" aria-labelledby="tab-bot" tabindex="0">
+      <h3 class="vh">Боты</h3>
+      <div class="packs">
+        <article class="pack">
+          
+          <h4>Бот-заявка</h4>
+          <p class="pack-for">Принимает заявки и отвечает на частые вопросы</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="200">200 BYN</span></p>
+          <p class="pack-days">3–5 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Меню и ответы на частые вопросы</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Заявки с уведомлением вам в Telegram</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Хостинг 24/7 без вашего сервера</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Оплата, AI-ответы, рассылки</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_bot_0" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack best">
+          <p class="pack-badge">Рекомендую</p>
+          <h4>Бот-продавец</h4>
+          <p class="pack-for">Продаёт и принимает оплату прямо в Telegram</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="450">450 BYN</span></p>
+          <p class="pack-days">6–10 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Всё из «Бота-заявки»</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Оплата в Telegram Stars</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Заявки в Google Таблицу или CRM</span></li></ul>
+          <p class="exc"><b>Не входит:</b> AI-ответы, админка, Mini App</p>
+          <a class="btn btn-accent btn-block" href="https://t.me/KirdunSupportBot?start=o_bot_0_pay-crm" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack">
+          
+          <h4>Бот с AI и админкой</h4>
+          <p class="pack-for">Сам отвечает клиентам, а рассылки и цифры у вас</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="650">650 BYN</span></p>
+          <p class="pack-days">9–14 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Всё из «Бота-заявки»</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Оплата в Telegram Stars</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>AI-ответы клиентам</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Админка и рассылки</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Mini App внутри Telegram</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_bot_0_pay-ai-admin" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="panel-site" aria-labelledby="tab-site" tabindex="0">
+      <h3 class="vh">Сайты</h3>
+      <div class="packs">
+        <article class="pack">
+          
+          <h4>Лендинг-визитка</h4>
+          <p class="pack-for">Одна понятная страница о вас и ваших услугах</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="250">250 BYN</span></p>
+          <p class="pack-days">3–6 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>1 страница: структура и тексты</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Адаптив под телефон</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Базовое SEO</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Заявки в Telegram, домен под ключ</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_site_1" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack best">
+          <p class="pack-badge">Рекомендую</p>
+          <h4>Продающий лендинг</h4>
+          <p class="pack-for">Страница, с которой приходят заявки</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="480">480 BYN</span></p>
+          <p class="pack-days">6–10 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Всё из «Визитки»</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Анимации и дизайн «вау»</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Заявки сразу в Telegram</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Домен, хостинг и SSL под ключ</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Второй язык, админка</p>
+          <a class="btn btn-accent btn-block" href="https://t.me/KirdunSupportBot?start=o_site_1_design-form-domain" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack">
+          
+          <h4>Сайт с админкой</h4>
+          <p class="pack-for">До 5 страниц, тексты и цены меняете сами</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="920">920 BYN</span></p>
+          <p class="pack-days">12–18 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>До 5 страниц</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Всё из «Продающего лендинга»</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Админка для правок</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Второй язык</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_site_5_design-form-domain-cms" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="panel-parser" aria-labelledby="tab-parser" tabindex="0">
+      <h3 class="vh">Парсеры</h3>
+      <div class="packs">
+        <article class="pack">
+          
+          <h4>Разовая выгрузка</h4>
+          <p class="pack-for">Собрать данные с сайта один раз</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="120">120 BYN</span></p>
+          <p class="pack-days">1–3 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>1 сайт-источник</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Выгрузка в Excel или CSV</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Запуск по расписанию, сайты с защитой</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_parser_1" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack best">
+          <p class="pack-badge">Рекомендую</p>
+          <h4>Мониторинг</h4>
+          <p class="pack-for">Свежие данные каждый день без ручной работы</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="280">280 BYN</span></p>
+          <p class="pack-days">2–4 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>1 сайт-источник</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Запуск по расписанию</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Google Таблица</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Уведомления в Telegram</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Сайты с защитой и логином</p>
+          <a class="btn btn-accent btn-block" href="https://t.me/KirdunSupportBot?start=o_parser_1_schedule-sheets-notify" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack">
+          
+          <h4>Мониторинг конкурентов</h4>
+          <p class="pack-for">Цены и товары конкурентов у вас в таблице</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="500">500 BYN</span></p>
+          <p class="pack-days">5–8 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>До 3 сайтов</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Всё из «Мониторинга»</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Сайты с защитой или логином</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Больше 3 сайтов считаем отдельно</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_parser_3_schedule-sheets-notify-hard" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="panel-video" aria-labelledby="tab-video" tabindex="0">
+      <h3 class="vh">Видео</h3>
+      <div class="packs">
+        <article class="pack">
+          
+          <h4>Один ролик</h4>
+          <p class="pack-for">Монтаж из ваших исходников</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="40">40 BYN</span></p>
+          <p class="pack-days">1–2 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ролик до 60 секунд</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Музыка и переходы</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Формат 9:16, 1:1 или 16:9</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Субтитры, сценарий</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_video_1" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack best">
+          <p class="pack-badge">Рекомендую</p>
+          <h4>5 роликов</h4>
+          <p class="pack-for">Контент для Reels и Shorts на неделю</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="200">200 BYN</span></p>
+          <p class="pack-days">3–4 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>5 роликов</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Субтитры</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Музыка и переходы</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Сценарий и озвучка</p>
+          <a class="btn btn-accent btn-block" href="https://t.me/KirdunSupportBot?start=o_video_5_subs" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack">
+          
+          <h4>Рекламный ролик</h4>
+          <p class="pack-for">Реклама со сценарием и версии под соцсети</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="290">290 BYN</span></p>
+          <p class="pack-days">4–6 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Сценарий</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>AI-озвучка и AI-кадры</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Субтитры</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>3 версии под соцсети</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Съёмка</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_video_3_ad-aivo-subs" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="panel-visual" aria-labelledby="tab-visual" tabindex="0">
+      <h3 class="vh">AI-визуал</h3>
+      <div class="packs">
+        <article class="pack">
+          
+          <h4>10 изображений</h4>
+          <p class="pack-for">Картинки для постов и рекламы</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="50">50 BYN</span></p>
+          <p class="pack-days">1–2 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>10 изображений</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Обложки, баннеры или фото товаров</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Единый стиль бренда</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_visual_10" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack best">
+          <p class="pack-badge">Рекомендую</p>
+          <h4>Стиль бренда</h4>
+          <p class="pack-for">Узнаваемые картинки в одном стиле</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="100">100 BYN</span></p>
+          <p class="pack-days">3–4 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>20 изображений</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Единый стиль бренда</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Карточки для маркетплейсов</p>
+          <a class="btn btn-accent btn-block" href="https://t.me/KirdunSupportBot?start=o_visual_20_style" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+        <article class="pack">
+          
+          <h4>Для маркетплейса</h4>
+          <p class="pack-for">Карточки товаров, которые хочется открыть</p>
+          <p class="pack-price"><small>от</small> <span class="m" data-byn="200">200 BYN</span></p>
+          <p class="pack-days">5–6 дней</p>
+          <ul class="inc"><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>30 изображений</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Единый стиль бренда</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Карточки для маркетплейсов</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ретушь ваших фото</span></li></ul>
+          <p class="exc"><b>Не входит:</b> Фотосъёмка</p>
+          <a class="btn btn-ghost btn-block" href="https://t.me/KirdunSupportBot?start=o_visual_30_style-cards-retouch" target="_blank" rel="noopener" data-goal="pack">Заказать</a>
+        </article>
+      </div>
+    </div>
+    <p class="price-note">Срочно: цена +30%, срок на 40% короче. Нужен другой набор? <a class="link" href="#calc">Соберите в калькуляторе →</a></p>
+  </div>
+</section>
+<section class="band" id="demo-offer">
+  <div class="wrap band-in">
+    <div class="sec-head">
+      <p class="eyebrow">Без риска</p>
+      <h2>Сначала покажу, потом платите</h2>
+    </div>
+    <div class="band-grid">
+      <div class="band-item reveal"><span class="band-num">01</span><h3>Что получите</h3><p>Первый экран сайта или рабочий прототип бота, чтобы вы увидели результат до оплаты.</p></div>
+      <div class="band-item reveal"><span class="band-num">02</span><h3>Что нужно от вас</h3><p>Пара предложений о задаче и пример, который нравится. Остальное спрошу сам.</p></div>
+      <div class="band-item reveal"><span class="band-num">03</span><h3>Сколько стоит</h3><p>0 BYN. Не понравилось, расходимся без оплаты.</p></div>
+    </div>
+    <a class="btn btn-accent btn-lg" href="https://t.me/KirdunSupportBot?start=demo" target="_blank" rel="noopener" data-goal="demo"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.5 4.2 18.4 19c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 12.7l-4.7-1.5c-1-.3-1-1 .2-1.5L20.1 2.6c.9-.3 1.6.2 1.4 1.6z"/></svg><span>Получить демо в Telegram</span></a>
+  </div>
+</section>
+<section class="sec" id="calc">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Калькулятор</p>
+      <h2>Соберите проект и узнайте цену</h2>
+      <p class="sec-lead">Отметьте, что нужно, и отправьте смету в мой бот одним нажатием. Он покажет её, а я отвечу там же.</p>
+    </div>
+    <div class="calc">
+      <div class="calc-left">
+        <div class="field">
+          <label for="brief" class="field-label">Опишите задачу (необязательно)</label>
+          <textarea id="brief" name="brief" rows="3" maxlength="800" placeholder="Например: бот для записи в салон с оплатой и напоминаниями"></textarea>
+          <p class="hint" id="briefHint" aria-live="polite"></p>
+        </div>
+        <fieldset class="field">
+          <legend class="field-label">Что делаем</legend>
+          <div class="types" id="typeGrid">
+            <label><input type="radio" name="type" value="site" checked><span>Сайты под ключ</span></label>
+            <label><input type="radio" name="type" value="bot"><span>Telegram-боты</span></label>
+            <label><input type="radio" name="type" value="parser"><span>Парсеры и автоматизация</span></label>
+            <label><input type="radio" name="type" value="video"><span>Видеомонтаж и реклама</span></label>
+            <label><input type="radio" name="type" value="visual"><span>AI-фото и визуал</span></label>
+          </div>
+        </fieldset>
+        <div class="field range" id="rangeWrap">
+          <div class="range-top"><label for="rangeInput" id="rangeLabel">Страниц</label><output id="rangeOut" for="rangeInput">1</output></div>
+          <input type="range" id="rangeInput" min="1" max="10" step="1" value="1">
+        </div>
+        <fieldset class="field">
+          <legend class="field-label">Что добавить</legend>
+          <div class="opts" id="optGrid">
+            <label><input type="checkbox" value="design"><span>Анимации и дизайн «вау»<em>+<span class="m" data-byn="150">150 BYN</span></em></span></label>
+            <label><input type="checkbox" value="lang"><span>Второй язык<em>+<span class="m" data-byn="100">100 BYN</span></em></span></label>
+            <label><input type="checkbox" value="form"><span>Заявки в Telegram<em>+<span class="m" data-byn="40">40 BYN</span></em></span></label>
+            <label><input type="checkbox" value="domain"><span>Домен и хостинг под ключ<em>+<span class="m" data-byn="40">40 BYN</span></em></span></label>
+            <label><input type="checkbox" value="cms"><span>Админка для правок<em>+<span class="m" data-byn="200">200 BYN</span></em></span></label>
+          </div>
+        </fieldset>
+        <label class="switch"><input type="checkbox" id="urgent"><span class="sw" aria-hidden="true"></span><span>Срочно: быстрее на 40%, цена +30%</span></label>
+      </div>
       <aside class="calc-right" aria-live="polite">
-        <p class="res-label" data-i18n="calc.result">Примерная смета</p>
-        <p class="res-price"><span id="pMin">250</span><span class="dash">–</span><span id="pMax">400</span> <span class="res-cur" id="pCur">BYN</span></p>
-        <p class="res-days"><span data-i18n="calc.days">Срок:</span> <b id="pDays">3–6</b> <span data-i18n="calc.daysUnit">дней</span></p>
-        <ul class="res-list" id="resList"></ul>
-        <form id="orderForm" class="order" novalidate>
-          <label for="contact" class="field-label" data-i18n="calc.contact">Как к вам обращаться (необязательно)</label>
-          <input id="contact" name="contact" autocomplete="name" maxlength="80" data-i18n-ph="calc.contactPh" placeholder="Имя или название бизнеса">
-          <button class="btn btn-accent btn-lg btn-block magnetic" type="submit"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.5 4.2 18.4 19c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 12.7l-4.7-1.5c-1-.3-1-1 .2-1.5L20.1 2.6c.9-.3 1.6.2 1.4 1.6z"/></svg><span data-i18n="calc.send">Отправить смету в Telegram</span></button>
-          <a class="mail-link" id="mailLink" href="mailto:erder101@gmail.com" data-i18n="calc.mail">или на почту</a>
-        </form>
-        <p class="res-note" data-i18n="calc.note">Это ориентир, а не оферта. Точную цену назову после пары вопросов.</p>
+        <p class="res-label">Примерная смета</p>
+        <p class="res-price" id="resPrice"><span class="m" data-byn-range="250,400">250–400 BYN</span></p>
+        <p class="res-days">Срок: <b id="resDays">3–6</b> дней</p>
+        <ul class="res-list" id="resList"><li><span>База: Сайты под ключ</span></li></ul>
+        <a class="btn btn-accent btn-lg btn-block" id="sendOrder" href="https://t.me/KirdunSupportBot?start=o_site_1" target="_blank" rel="noopener" data-goal="calc"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.5 4.2 18.4 19c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 12.7l-4.7-1.5c-1-.3-1-1 .2-1.5L20.1 2.6c.9-.3 1.6.2 1.4 1.6z"/></svg><span>Отправить смету в Telegram</span></a>
+        <p class="res-note">Это ориентир, а не оферта. Точную цену назову после пары вопросов.</p>
       </aside>
     </div>
   </div>
 </section>
-
-<section class="section" id="process">
+<section class="sec" id="process">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">04 / <span data-i18n="nav.process">Процесс</span></p>
-      <h2 data-i18n="proc.h">Как мы будем работать</h2>
-      <p class="sec-lead" data-i18n="proc.lead">Без сюрпризов: вы видите результат до оплаты и на каждом шаге.</p>
+    <div class="sec-head">
+      <p class="eyebrow">Процесс</p>
+      <h2>Как я работаю</h2>
+      <p class="sec-lead">Без сюрпризов: результат видно до оплаты и на каждом шаге.</p>
     </div>
-    <ol class="steps" id="steps"></ol>
+    <ol class="steps">
+      <li class="step reveal"><h3>Заявка</h3><p>Пишете в мой бот или собираете смету в калькуляторе. Отвечаю за пару часов днём.</p></li>
+      <li class="step reveal"><h3>Бесплатное демо</h3><p>Делаю первый экран сайта или прототип бота, чтобы вы увидели результат до оплаты.</p></li>
+      <li class="step reveal"><h3>Договор и предоплата</h3><p>Фиксируем объём, цену и срок в переписке. Предоплата 50%.</p></li>
+      <li class="step reveal"><h3>Работа на виду</h3><p>Показываю промежуточные версии, правки обсуждаем сразу, а не в конце.</p></li>
+      <li class="step reveal"><h3>Сдача и поддержка</h3><p>Запускаю, передаю доступы и исходники. 14 дней бесплатно правлю ошибки.</p></li>
+    </ol>
   </div>
 </section>
-
-<section class="section" id="pay">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">05 / <span data-i18n="pay.eye">Оплата</span></p>
-      <h2 data-i18n="pay.h">Как платить</h2>
-      <p class="sec-lead" data-i18n="pay.lead">Сначала договариваемся в Telegram, потом оплата удобным способом. Реквизиты присылаю лично, после согласования.</p>
+<section class="sec" id="about">
+  <div class="wrap about">
+    <div class="about-main">
+      <div class="sec-head">
+      <p class="eyebrow">Обо мне</p>
+      <h2>Пишете напрямую тому, кто делает</h2>
     </div>
-    <div class="pay" id="payList"></div>
-  </div>
-</section>
-
-<section class="section" id="diary">
-  <div class="wrap diary-in">
-    <div class="sec-head reveal">
-      <p class="eyebrow">06 / <span data-i18n="nav.diary">Дневник</span></p>
-      <h2 data-i18n="diary.h">Дневник пути</h2>
-      <p class="sec-lead" data-i18n="diary.lead">Учусь, делаю проекты и строю своё дело открыто. Тут только то, что было на самом деле.</p>
-      <div class="goal" id="goal">
-        <div class="goal-top"><span data-i18n="diary.goal">Заработано на платформе</span><b id="goalText">0 / 3000 BYN</b></div>
-        <div class="goal-bar"><span id="goalBar"></span></div>
+      <p class="about-p">Я Ярослав Кирдун, разработчик из Минска. Учусь в IT-колледже и параллельно запускаю свои продукты: AI-стража Telegram-групп Кордон, бота для поиска работы Оффер и бота, который принимает заявки с этого сайта.</p>
+      <p class="about-p">Пишу на Python и JavaScript: Telegram-боты, сайты, парсеры, автоматизация. Работаю один, поэтому без менеджеров, испорченного телефона и наценок студии.</p>
+      <p><a class="link" href="https://github.com/Yarik002" target="_blank" rel="noopener">github.com/Yarik002 →</a></p>
+    </div>
+    <div class="about-side">
+      <div class="not reveal">
+        <h3>Чего я не делаю</h3>
+        <ul><li>Спам-рассылки и накрутки</li><li>Инвайтинг и «бомберы»</li><li>Сбор чужих личных данных</li><li>Обещания «в топ за неделю»</li></ul>
+      </div>
+      <div class="pay reveal">
+        <h3>Оплата</h3>
+        <dl><div><dt>Telegram Stars</dt><dd>Счёт приходит в бот, оплатить можно из любой страны.</dd></div><div><dt>ЕРИП</dt><dd>Для Беларуси. Реквизиты присылаю в бот после согласования.</dd></div><div><dt>Перевод на карту</dt><dd>По договорённости, реквизиты тоже в боте.</dd></div><div><dt>Другие страны</dt><dd>Россия, Казахстан и не только: подберём удобный способ.</dd></div></dl>
+        
       </div>
     </div>
-    <ol class="timeline" id="timeline"></ol>
   </div>
 </section>
-
-<section class="section" id="faq">
+<section class="sec" id="faq">
   <div class="wrap faq-in">
-    <div class="sec-head reveal">
-      <p class="eyebrow">07 / FAQ</p>
-      <h2 data-i18n="faq.h">Частые вопросы</h2>
+    <div class="sec-head">
+      <p class="eyebrow">Вопросы</p>
+      <h2>Частые вопросы</h2>
     </div>
-    <div class="faq" id="faqList"></div>
+    <div class="faq">
+      <details><summary>Почему у тебя дешевле, чем в студиях?</summary><p>Я работаю один, без менеджеров и офиса. Платите за работу, а не за накладные расходы. Взамен прошу честный отзыв.</p></details>
+      <details><summary>А если результат не понравится?</summary><p>Поэтому сначала бесплатное демо. Если не зашло, расходимся без оплаты. Дальше правки входят в цену.</p></details>
+      <details><summary>Исходники и доступы будут мои?</summary><p>Да. Домен, хостинг, бот и код оформляются на вас, я передаю всё после оплаты.</p></details>
+      <details><summary>Работаешь с другими странами?</summary><p>Да, с Беларусью, Россией, Казахстаном и не только. Общаемся в Telegram, способ оплаты обсудим.</p></details>
+      <details><summary>Где следить за заказом и как платить?</summary><p>Всё в моём боте @KirdunSupportBot: заявка с номером, статус, вопросы и счёт. Оплата в Telegram Stars, через ЕРИП или переводом, реквизиты присылаю после согласования.</p></details>
+      <details><summary>Как быстро ты отвечаешь?</summary><p>Обычно в течение пары часов днём по Минску. Ночью бот примет заявку и сразу покажет смету, а я отвечу утром.</p></details>
+      <details><summary>Что нужно от меня, чтобы начать?</summary><p>Пара предложений о задаче и примеры того, что нравится. Остальное спрошу сам.</p></details>
+    </div>
   </div>
 </section>
-
-<section class="final" id="contact">
-  <div class="wrap final-in reveal">
-    <p class="eyebrow" data-i18n="final.eye">Готовы начать?</p>
-    <h2 class="final-title"><span data-i18n="final.t1">Напишите пару слов</span><br><span class="accent-word" data-i18n="final.t2">о задаче</span></h2>
-    <p class="sec-lead" data-i18n="final.lead">Отвечу в течение дня и скажу честно, смогу ли помочь и сколько это будет стоить.</p>
-    <div class="hero-cta center">
-      <a class="btn btn-accent btn-lg magnetic tg-link" href="https://t.me/usernaaamer" target="_blank" rel="noopener"><span data-i18n="cta.tg">Написать в Telegram</span></a>
-      <a class="btn btn-ghost btn-lg" id="mailBtn" href="mailto:erder101@gmail.com">erder101@gmail.com</a>
+<section class="sec sec-tight" id="diary">
+  <div class="wrap diary-in">
+    <div class="sec-head">
+      <p class="eyebrow">Дневник</p>
+      <h2>Дневник пути</h2>
+      <p class="sec-lead">Строю своё дело открыто. Только то, что было на самом деле.</p>
     </div>
+    <ol class="timeline">
+      <li><time datetime="2026-11-03">3 ноября 2026 г.</time><h3>Запустил эту платформу</h3><p>Собрал все проекты и услуги в одном месте. Дальше: первые заказы и предложения бизнесам.</p></li>
+      <li><time datetime="2026-10-27">27 октября 2026 г.</time><h3>Кордон: пробный Pro в проде</h3><p>Добавил бесплатные 7 дней Pro. Бот работает в настоящих группах.</p></li>
+      <li><time datetime="2026-10-24">24 октября 2026 г.</time><h3>За день: исследование рынка и Кордон</h3><p>7 исследований рынка, выбор идеи, бот с 79 тестами и деплой в облако Telegram. Вечером поймал первый скам в живой группе.</p></li>
+      <li><time datetime="2026-10-21">21 октября 2026 г.</time><h3>Запустил «Оффер» и получил урок</h3><p>Бот, сайт, 4 тарифа. За 3 дня ноль внешних пользователей. Вывод: продукт без трафика не продаёт, поэтому теперь пишу бизнесам сам.</p></li>
+    </ol>
+  </div>
+</section>
+<section class="final" id="contact">
+  <div class="wrap final-in">
+    <p class="eyebrow">Готовы начать?</p>
+    <h2>Расскажите о задаче</h2>
+    <p class="sec-lead">Ответ придёт в бот, обычно за пару часов днём. Ночью бот примет заявку, а я отвечу утром.</p>
+    <form class="final-form" id="finalForm" action="https://t.me/KirdunSupportBot?start=demo" target="_blank">
+      <label class="vh" for="finalText">Пара слов о задаче</label>
+      <textarea id="finalText" rows="3" maxlength="800" placeholder="Что за бизнес и что нужно сделать"></textarea>
+      <button class="btn btn-accent btn-lg" type="submit" data-goal="final"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.5 4.2 18.4 19c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 12.7l-4.7-1.5c-1-.3-1-1 .2-1.5L20.1 2.6c.9-.3 1.6.2 1.4 1.6z"/></svg><span>Отправить в Telegram</span></button>
+    </form>
+    <a class="link" href="https://t.me/KirdunSupportBot?start=site" target="_blank" rel="noopener">или просто откройте бота @KirdunSupportBot</a>
   </div>
 </section>
 </main>
-
 <footer class="foot">
   <div class="wrap foot-in">
-    <p>© <span id="year">2026</span> <span id="fname">Ярослав Кирдун</span> · <span data-i18n="foot.city">Минск</span></p>
+    <p>© 2026 Ярослав Кирдун · Минск</p>
     <p class="foot-links">
-      <a class="tg-link" href="https://t.me/usernaaamer" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://t.me/KirdunSupportBot?start=site" target="_blank" rel="noopener">Бот для заказов</a>
       <a href="https://github.com/Yarik002" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://t.me/KordonAIBot" target="_blank" rel="noopener">@KordonAIBot</a>
+      <a href="https://yarik002.github.io/kordon-site/ru/" target="_blank" rel="noopener">Кордон</a>
+      <a href="https://yarik002.github.io/offer-site/" target="_blank" rel="noopener">Оффер</a>
     </p>
   </div>
 </footer>
-
-<a class="calc-bar" id="calcBar" href="#orderForm" aria-hidden="true" tabindex="-1"><span id="barPrice">250–400 BYN</span><b data-i18n="calc.bar">К заявке ↓</b></a>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<noscript><p class="noscript">Включите JavaScript или напишите напрямую: <a href="https://t.me/usernaaamer">t.me/usernaaamer</a></p></noscript>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-site" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.8"/><circle cx="6.5" cy="6.5" r=".9" fill="currentColor"/><circle cx="9.3" cy="6.5" r=".9" fill="currentColor"/><path d="M7 13h6M7 16h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="3.5" r="1.3" fill="currentColor"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/></symbol>
-  <symbol id="i-parser" viewBox="0 0 24 24"><path d="M8 6 3 12l5 6M16 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.5 4 10.5 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 10 5-3v10l-5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
-  <symbol id="i-visual" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 18 5-5 4 4 3-3 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
-</svg>
-
-<script src="assets/js/config.js"></script>
-<script src="assets/js/data.js"></script>
-<script src="assets/js/main.js"></script>
+<noscript><p class="noscript">Включите JavaScript для калькулятора или напишите в бот: <a href="https://t.me/KirdunSupportBot?start=site">@KirdunSupportBot</a></p></noscript>
+<script src="/assets/js/config.js" defer></script>
+<script src="/assets/js/data.js" defer></script>
+<script src="/assets/js/calc.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>
