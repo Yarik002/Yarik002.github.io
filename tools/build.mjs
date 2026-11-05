@@ -59,13 +59,13 @@ function head(lang, L) {
 <meta property="og:locale" content="${lang === 'en' ? 'en_US' : 'ru_RU'}">
 <meta property="og:title" content="${esc(L.ogTitle)}">
 <meta property="og:description" content="${esc(L.ogDesc)}">
-<meta property="og:image" content="${C.site}assets/img/og.png">
+<meta property="og:image" content="${C.site}assets/img/og${lang === 'en' ? '-en' : ''}.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:url" content="${url}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(L.ogTitle)}">
 <meta name="twitter:description" content="${esc(L.ogDesc)}">
-<meta name="twitter:image" content="${C.site}assets/img/og.png">
+<meta name="twitter:image" content="${C.site}assets/img/og${lang === 'en' ? '-en' : ''}.png">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,7 @@ function jsonLd(lang, L, url) {
   const person = { '@type': 'Person', '@id': `${C.site}#person`, name: t(C.name, lang), jobTitle: lang === 'en' ? 'Web and Telegram bot developer' : 'Разработчик сайтов и Telegram-ботов',
     address: { '@type': 'PostalAddress', addressLocality: lang === 'en' ? 'Minsk' : 'Минск', addressCountry: 'BY' }, url: C.site,
     sameAs: [`https://github.com/${C.github}`, `https://t.me/${C.bot}`] };
-  const service = { '@type': 'ProfessionalService', '@id': `${C.site}#service`, name: L.ogTitle, url, image: `${C.site}assets/img/og.png`,
+  const service = { '@type': 'ProfessionalService', '@id': `${C.site}#service`, name: L.ogTitle, url, image: `${C.site}assets/img/og${lang === 'en' ? '-en' : ''}.png`,
     description: L.ogDesc, founder: { '@id': `${C.site}#person` }, areaServed: ['BY', 'RU', 'KZ'],
     address: { '@type': 'PostalAddress', addressLocality: lang === 'en' ? 'Minsk' : 'Минск', addressCountry: 'BY' },
     priceRange: `${Math.min(...SERVICES.map((s) => s.from))}+ BYN`,
