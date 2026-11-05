@@ -46,3 +46,14 @@ python -m http.server 8773 --directory platform
 ```bash
 node tools/build.mjs --check
 ```
+
+## Превью ссылки (og.png)
+
+Картинка, которую Telegram и соцсети показывают под ссылкой. Исходник `tools/og.html`, английская версия `tools/og.html#en`.
+Пересобрать через Edge headless (из папки `platform`):
+
+```bash
+"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --hide-scrollbars --window-size=1200,630 --virtual-time-budget=4000 --screenshot="$PWD/assets/img/og.png" "file:///$PWD/tools/og.html"
+```
+
+Для английской: `og-en.png` и адрес `.../tools/og.html#en`. После смены картинки отправить ссылку на сайт боту @WebpageBot, чтобы Telegram обновил превью.
