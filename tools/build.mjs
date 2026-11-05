@@ -74,7 +74,7 @@ function head(lang, L) {
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(L.ogTitle)}">
 <meta name="twitter:description" content="${esc(L.ogDesc)}">
-<meta name="twitter:image" content="${C.site}assets/img/og${lang === 'en' ? '-en' : ''}.png">
+<meta name="twitter:image" content="${C.site}assets/img/og${lang === 'en' ? '-en' : ''}.png">${C.verify?.google ? `\n<meta name="google-site-verification" content="${esc(C.verify.google)}">` : ''}${C.verify?.yandex ? `\n<meta name="yandex-verification" content="${esc(C.verify.yandex)}">` : ''}
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

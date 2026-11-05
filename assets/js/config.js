@@ -8,7 +8,10 @@ window.CONFIG = {
   github: 'Yarik002',
   site: 'https://yarik002.github.io/',
 
-  openForOrders: true,                // плашка «Принимаю заказы»
+  // Коды подтверждения Search Console и Яндекс Вебмастера (только значение content="..."), потом node tools/build.mjs.
+  verify: { google: '', yandex: '' },
+
+  openForOrders: true,               // плашка «Принимаю заказы»
 
   // Цель в «Дневнике пути». Скрыта: нулевой счётчик клиенту говорит «у него никто не заказывал».
   goal: { show: false, earned: 0, target: 3000, currency: 'BYN' },
