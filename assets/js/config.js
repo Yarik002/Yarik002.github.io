@@ -9,7 +9,7 @@ window.CONFIG = {
   site: 'https://yarik002.github.io/',
 
   // Коды подтверждения Search Console и Яндекс Вебмастера (только значение content="..."), потом node tools/build.mjs.
-  verify: { google: '', yandex: '' },
+  verify: { google: 'PkqgeCby6MEHFJXLASaqW0HoQ-eZGgN4Kmd9hIhYxgI', yandex: '' },
 
   openForOrders: true,               // плашка «Принимаю заказы»
 
