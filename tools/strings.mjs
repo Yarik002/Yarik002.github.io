@@ -2,7 +2,7 @@
 export const S = {
   ru: {
     title: 'Сайты и Telegram-боты на заказ в Минске · Kirdun.dev',
-    desc: 'Разработчик из Минска. Telegram-боты от {bot}, сайты под ключ от {site}, парсеры от {parser}. Бесплатное демо до оплаты, пакеты с ценами, калькулятор и заказ в Telegram.',
+    desc: 'Разработчик из Минска: Telegram-боты от {bot}, сайты от {site}, парсеры от {parser}. Бесплатное демо до оплаты, цены и заказ в Telegram.',
     ogTitle: 'Сайты и Telegram-боты на заказ · Kirdun.dev',
     ogDesc: 'Бесплатное демо до оплаты, пакеты с понятной ценой и заказ в Telegram в одно нажатие.',
     skip: 'К содержимому',
@@ -47,7 +47,7 @@ export const S = {
   },
   en: {
     title: 'Websites & Telegram Bots for Hire in Minsk · Kirdun.dev',
-    desc: 'Freelance developer in Minsk, Belarus: Telegram bots from {bot}, websites from {site}, web scrapers from {parser}. Free demo before you pay, clear packages, instant estimate, order on Telegram.',
+    desc: 'Developer in Minsk: Telegram bots from {bot}, websites from {site}, scrapers from {parser}. Free demo before you pay, clear prices, order on Telegram.',
     ogTitle: 'Websites & Telegram bots for hire · Kirdun.dev',
     ogDesc: 'A free demo before you pay, packages with clear prices, and ordering on Telegram in one tap.',
     skip: 'Skip to content',

@@ -14,8 +14,8 @@ window.PROJECTS = [
     facts: { ru: ['187 автотестов', 'Работает 24/7 в облаке Telegram', 'Оплата в Telegram Stars'], en: ['187 automated tests', 'Runs 24/7 in the Telegram cloud', 'Paid in Telegram Stars'] },
     stack: ['Telegram Serverless', 'JavaScript', 'SQLite', 'Gemini'],
     links: [
-      { label: '@KordonAIBot', href: 'https://t.me/KordonAIBot' },
-      { label: { ru: 'Сайт', en: 'Website' }, href: 'https://yarik002.github.io/kordon-site/' }
+      { label: '@KordonAIBot', href: 'https://t.me/KordonAIBot?start=platform' },
+      { label: { ru: 'Сайт', en: 'Website' }, href: { ru: 'https://yarik002.github.io/kordon-site/ru/', en: 'https://yarik002.github.io/kordon-site/' } }
     ]
   },
   {
@@ -178,7 +178,7 @@ window.CALC = {
   bot: {
     base: [200, 300], days: [3, 5],
     options: [
-      { id: 'pay', add: [150, 250], days: 3, label: { ru: 'Приём оплаты', en: 'Payments' }, kw: ['оплат', 'плат', 'stars', 'pay', 'деньг'] },
+      { id: 'pay', add: [150, 250], days: 3, label: { ru: 'Приём оплаты', en: 'Payments' }, kw: ['оплат', 'платеж', 'платёж', 'stars', 'pay', 'деньг'] },
       { id: 'ai', add: [150, 300], days: 3, label: { ru: 'AI-ответы', en: 'AI replies' }, kw: ['ai', 'ии', 'нейро', 'искусств', 'gpt', 'gemini', 'умн'] },
       { id: 'admin', add: [150, 250], days: 3, label: { ru: 'Админка и рассылки', en: 'Admin & broadcasts' }, kw: ['админ', 'рассыл', 'admin', 'broadcast'] },
       { id: 'miniapp', add: [300, 500], days: 5, label: { ru: 'Mini App внутри Telegram', en: 'Telegram Mini App' }, kw: ['mini app', 'мини', 'приложен', 'webapp'] },
@@ -199,7 +199,7 @@ window.CALC = {
     base: [40, 70], days: [1, 2],
     range: { id: 'count', min: 1, max: 20, value: 1, per: [35, 60], perDays: 0.5, label: { ru: 'Роликов', en: 'Videos' } },
     options: [
-      { id: 'ad', add: [100, 180], days: 2, label: { ru: 'Рекламный ролик со сценарием', en: 'Ad video with a script' }, kw: ['реклам', 'сценар', 'ad', 'promo'] },
+      { id: 'ad', add: [100, 180], days: 2, label: { ru: 'Рекламный ролик со сценарием', en: 'Ad video with a script' }, kw: ['реклам', 'сценар', 'advert', 'ad video', 'commercial', 'promo'] },
       { id: 'aivo', add: [60, 120], days: 1, label: { ru: 'AI-озвучка и AI-кадры', en: 'AI voice & AI shots' }, kw: ['озвуч', 'голос', 'voice'] },
       { id: 'subs', add: [20, 40], days: 0, label: { ru: 'Субтитры', en: 'Subtitles' }, kw: ['субтитр', 'subtit', 'caption'] }
     ]
@@ -217,7 +217,7 @@ window.CALC = {
 
 // Ключевые слова для «опиши задачу → смета».
 window.SERVICE_KW = {
-  site: ['сайт', 'лендинг', 'визитк', 'страниц', 'интернет-магазин', 'site', 'website', 'landing', 'web'],
+  site: ['сайт', 'лендинг', 'визитк', 'страниц', 'интернет-магазин', 'site', 'website', 'landing', 'webpage', 'web page', 'web site'],
   bot: ['бот', 'телеграм', 'telegram', 'bot', 'чат-бот'],
   parser: ['парс', 'собрать', 'сбор', 'конкурент', 'мониторинг', 'цены', 'каждый день', 'ежеднев', 'выгруз', 'автоматиз', 'скрипт', 'scrap', 'pars', 'automat'],
   video: ['видео', 'ролик', 'монтаж', 'reels', 'рилс', 'tiktok', 'тикток', 'shorts', 'video'],

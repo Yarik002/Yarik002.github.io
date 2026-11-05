@@ -5,6 +5,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 import { S } from './strings.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
@@ -16,6 +17,14 @@ const { CONFIG: C, SERVICES, CALC, PACKAGES, PROJECTS, PROCESS, FAQ, DIARY, KCal
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fill = (s, v) => s.replace(/\{(\w+)\}/g, (_, k) => v[k] ?? `{${k}}`);
 const BOT = (payload) => `https://t.me/${C.bot}?start=${payload}`;
+// «2–4 дня», «1–5 дней»: склоняем по последнему числу (как daysWord в main.js).
+const daysWord = (n, lang) => {
+  if (lang === 'en') return n === 1 ? 'day' : 'days';
+  const a = n % 10, b = n % 100;
+  return a === 1 && b !== 11 ? 'день' : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'дня' : 'дней';
+};
+// Версия файла в ссылке: Pages кэширует на 10 минут, новая страница не должна взять старый JS.
+const ver = (rel) => createHash('sha1').update(readFileSync(new URL('../' + rel, import.meta.url))).digest('hex').slice(0, 8);
 const CUR = { ru: 'BYN', en: 'USD' };
 const SVG = {
   arrow: '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -71,7 +80,7 @@ function head(lang, L) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=optional" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=optional"></noscript>
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=${ver('assets/css/style.css')}">
 ${lang === 'ru' ? '<script>if(/[?&]lang=en\\b/.test(location.search))location.replace("/en/"+location.hash)</script>\n' : ''}<script type="application/ld+json">${jsonLd(lang, L, url)}</script>
 </head>`;
 }
@@ -138,7 +147,7 @@ function hero(lang, L) {
         <input id="demoMsg" name="msg" autocomplete="off" maxlength="300" placeholder="${esc(L.demoPh)}">
         <button type="submit" aria-label="${esc(L.demoCheck)}">${SVG.arrow}</button>
       </form>
-      <p class="demo-note">${esc(L.demoNote)} <a href="https://t.me/KordonAIBot" target="_blank" rel="noopener">@KordonAIBot</a></p>
+      <p class="demo-note">${esc(L.demoNote)} <a href="https://t.me/KordonAIBot?start=platform" target="_blank" rel="noopener">@KordonAIBot</a></p>
     </div>
   </div>
   <div class="wrap">
@@ -157,7 +166,7 @@ const secHead = (eye, h, lead) => `<div class="sec-head">
 function work(lang, L) {
   const featured = PROJECTS.filter((p) => p.featured);
   const rest = PROJECTS.filter((p) => !p.featured);
-  const link = (l, i) => `<a class="${i === 0 ? 'btn btn-sm btn-dark' : 'link'}" href="${esc(l.href)}" target="_blank" rel="noopener">${esc(t(l.label, lang))}</a>`;
+  const link = (l, i) => `<a class="${i === 0 ? 'btn btn-sm btn-dark' : 'link'}" href="${esc(t(l.href, lang))}" target="_blank" rel="noopener">${esc(t(l.label, lang))}</a>`;
   return `<section class="sec" id="work">
   <div class="wrap">
     ${secHead(L.workEye, L.workH, L.workLead)}
@@ -181,7 +190,7 @@ function work(lang, L) {
         <p class="mini-tag">${esc(t(p.tag, lang))}</p>
         <p class="mini-text">${esc(t(p.text, lang))}</p>
         <p class="stack">${p.stack.map(esc).join(' · ')}</p>
-        ${p.links.length ? p.links.map((l) => `<a class="link" href="${esc(l.href)}" target="_blank" rel="noopener">${esc(t(l.label, lang))} →</a>`).join(' ') : ''}
+        ${p.links.length ? p.links.map((l) => `<a class="link" href="${esc(t(l.href, lang))}" target="_blank" rel="noopener">${esc(t(l.label, lang))} →</a>`).join(' ') : ''}
       </article>`).join('\n      ')}
     </div>
     <p class="center"><a class="link" href="https://github.com/${C.github}" target="_blank" rel="noopener">${esc(L.github)} →</a></p>
@@ -213,7 +222,7 @@ function prices(lang, L) {
           <h4>${esc(t(p.name, lang))}</h4>
           <p class="pack-for">${esc(t(p.for, lang))}</p>
           <p class="pack-price"><small>${esc(L.from)}</small> ${m(KCalc.roundByn(e.lo), lang)}</p>
-          <p class="pack-days">${e.d0}–${e.d1} ${esc(L.daysWord)}</p>
+          <p class="pack-days">${e.d0}–${e.d1} ${daysWord(e.d1, lang)}</p>
           <ul class="inc">${t(p.inc, lang).map((x) => `<li>${SVG.check}<span>${esc(x)}</span></li>`).join('')}</ul>
           <p class="exc"><b>${esc(L.excl)}</b> ${esc(t(p.exc, lang).join(', '))}</p>
           <a class="btn ${p.best ? 'btn-accent' : 'btn-ghost'} btn-block" href="${href}" target="_blank" rel="noopener" data-goal="pack">${esc(L.order)}</a>
@@ -271,10 +280,10 @@ function calc(lang, L) {
         </fieldset>
         <label class="switch"><input type="checkbox" id="urgent"><span class="sw" aria-hidden="true"></span><span>${esc(L.urgent)}</span></label>
       </div>
-      <aside class="calc-right" aria-live="polite">
+      <aside class="calc-right">
         <p class="res-label">${esc(L.result)}</p>
-        <p class="res-price" id="resPrice">${mr(KCalc.roundByn(e.lo), KCalc.roundByn(e.hi), lang)}</p>
-        <p class="res-days">${esc(L.days)}: <b id="resDays">${e.d0}–${e.d1}</b> ${esc(L.daysWord)}</p>
+        <p class="res-price" id="resPrice" aria-live="polite">${mr(KCalc.roundByn(e.lo), KCalc.roundByn(e.hi), lang)}</p>
+        <p class="res-days">${esc(L.days)}: <b id="resDays">${e.d0}–${e.d1}</b> <span id="resDaysWord">${daysWord(e.d1, lang)}</span></p>
         <ul class="res-list" id="resList"><li><span>${esc(L.base)}: ${esc(t(first.title, lang))}</span></li></ul>
         <a class="btn btn-accent btn-lg btn-block" id="sendOrder" href="${BOT(KCalc.encodeOrder(o))}" target="_blank" rel="noopener" data-goal="calc">${SVG.tg}<span>${esc(L.send)}</span></a>
         <p class="res-note">${esc(L.sendNote)}</p>
@@ -349,6 +358,7 @@ function final(lang, L) {
     <p class="sec-lead">${esc(L.finalLead)}</p>
     <form class="final-form" id="finalForm" action="${BOT(lang === 'en' ? 'demo_en' : 'demo')}" target="_blank">
       <label class="vh" for="finalText">${esc(L.finalLabel)}</label>
+      <input type="hidden" name="start" value="${lang === 'en' ? 'demo_en' : 'demo'}">
       <textarea id="finalText" rows="3" maxlength="800" placeholder="${esc(L.finalPh)}"></textarea>
       <button class="btn btn-accent btn-lg" type="submit" data-goal="final">${SVG.tg}<span>${esc(L.finalBtn)}</span></button>
     </form>
@@ -394,11 +404,8 @@ ${final(lang, L)}
 </main>
 ${footer(lang, L)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<noscript><p class="noscript">${esc(L.noscript)} <a href="${BOT('site')}">@${C.bot}</a></p></noscript>
-<script src="/assets/js/config.js" defer></script>
-<script src="/assets/js/data.js" defer></script>
-<script src="/assets/js/calc.js" defer></script>
-<script src="/assets/js/main.js" defer></script>
+<noscript><p class="noscript">${esc(L.noscript)} <a href="${BOT(lang === 'en' ? 'site_en' : 'site')}">@${C.bot}</a></p></noscript>
+${['config', 'data', 'calc', 'main'].map((f) => `<script src="/assets/js/${f}.js?v=${ver(`assets/js/${f}.js`)}" defer></script>`).join('\n')}
 </body>
 </html>
 `;
