@@ -227,6 +227,11 @@ window.SERVICE_KW = {
 // Дневник пути: только реальные события. Новые записи добавляй сверху.
 window.DIARY = [
   {
+    date: '2026-11-05',
+    title: { ru: 'Свой бот для заказов и поддержки', en: 'My own bot for orders and support' },
+    text: { ru: 'Заявки с калькулятора, бесплатное демо, оплата и поддержка Кордона теперь в одном боте: @KirdunSupportBot.', en: 'Calculator requests, free demos, payment and Kordon support now live in one bot: @KirdunSupportBot.' }
+  },
+  {
     date: '2026-11-03',
     title: { ru: 'Запустил эту платформу', en: 'Launched this platform' },
     text: { ru: 'Собрал все проекты и услуги в одном месте. Дальше: первые заказы и предложения бизнесам.', en: 'Put all projects and services in one place. Next: first orders and offers to businesses.' }
