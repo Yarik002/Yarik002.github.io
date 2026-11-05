@@ -16,11 +16,18 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const t = (o) => (o && typeof o === 'object' ? (o[lang] ?? o.ru) : o);
   const BOT = (payload) => `https://t.me/${C.bot}?start=${payload}`;
+  // «2–4 дня», «1–5 дней», «21 день»: склоняем по последнему числу.
+  const daysWord = (n) => {
+    if (lang === 'en') return n === 1 ? 'day' : 'days';
+    const a = n % 10, b = n % 100;
+    return a === 1 && b !== 11 ? 'день' : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 'дня' : 'дней';
+  };
 
   const UI = {
     ru: {
       base: 'База', urgent: 'Срочно', days: 'дней', briefFound: 'Похоже на: ', briefNone: 'Не понял задачу: выберите тип ниже или просто отправьте как есть.',
-      copied: 'Описание скопировано. В боте нажмите «Запустить» и вставьте его в чат.', opening: 'Открываю бота в Telegram…',
+      copied: 'Описание скопировано. В боте нажмите «Запустить» и вставьте его в чат.',
+      copiedCalc: 'Описание скопировано. В боте нажмите «Отправить заявку» и вставьте его в чат.', opening: 'Открываю бота в Telegram…',
       demoHi: 'Привет! Я Кордон. Пришлите сообщение из чата, скажу, похоже ли оно на скам.',
       scam: 'Похоже на скам', sus: 'Стоит проверить', clean: 'Явных признаков скама нет',
       cleanText: 'Обычное сообщение. В группе с Кордоном оно прошло бы без задержек.',
@@ -31,7 +38,8 @@
     },
     en: {
       base: 'Base', urgent: 'Rush', days: 'days', briefFound: 'Looks like: ', briefNone: 'Couldn\'t tell the task: pick a type below or just send it as is.',
-      copied: 'Description copied. In the bot, tap Start and paste it into the chat.', opening: 'Opening the bot in Telegram…',
+      copied: 'Description copied. In the bot, tap Start and paste it into the chat.',
+      copiedCalc: 'Description copied. In the bot, tap Send request and paste it into the chat.', opening: 'Opening the bot in Telegram…',
       demoHi: 'Hi! I\'m Kordon. Send me a message from a chat and I\'ll tell you if it looks like a scam.',
       scam: 'Looks like a scam', sus: 'Worth a check', clean: 'No obvious scam signs',
       cleanText: 'A normal message. In a group with Kordon it would go through without delay.',
@@ -124,6 +132,7 @@
     const lo = K.roundByn(e.lo), hi = K.roundByn(e.hi);
     $('#resPrice').innerHTML = `<span class="m" data-byn-range="${lo},${hi}">${moneyRange(lo, hi)}</span>`;
     $('#resDays').textContent = e.d0 === e.d1 ? e.d0 : `${e.d0}–${e.d1}`;
+    $('#resDaysWord').textContent = daysWord(e.d1);
     const lines = [[`${UI.base}: ${svcTitle(o.svc)}`, c.base[0]]];
     if (c.range) {
       const steps = Math.round((o.n - c.range.min) / (c.range.step || 1));
@@ -166,7 +175,12 @@
     setType(best, true);
     if (c.range) {
       const mm = text.match(/(\d{1,3})\s*(стр|page|сайт|site|ролик|видео|video|изображ|картин|фото|image|photo|источник|source)/);
-      if (mm) { state.n = Math.min(c.range.max, Math.max(c.range.min, Number(mm[1]))); renderType(); update(); }
+      if (mm) {
+        // К шагу ползунка, как в боте: иначе «35 фото» на сайте и в боте давали разную смету.
+        const step = c.range.step || 1, v = Math.min(c.range.max, Math.max(c.range.min, Number(mm[1])));
+        state.n = c.range.min + Math.floor((v - c.range.min) / step) * step;
+        renderType(); update();
+      }
     }
     const picked = c.options.filter((o) => state.opts.has(o.id)).map((o) => t(o.label));
     hint.textContent = UI.briefFound + svcTitle(best) + (picked.length ? ' + ' + picked.join(', ') : '');
@@ -174,7 +188,7 @@
   // Описание в диплинк не влезает (64 символа): копируем его, клиент вставит в чат с ботом.
   $('#sendOrder').addEventListener('click', () => {
     const brief = $('#brief').value.trim();
-    if (brief) copy(brief).then((ok) => toast(ok ? UI.copied : UI.opening)); else toast(UI.opening);
+    if (brief) copy(brief).then((ok) => toast(ok ? UI.copiedCalc : UI.opening)); else toast(UI.opening);
   });
 
   // ?o=… — вернулись из бота по «Изменить смету»: восстанавливаем калькулятор.
@@ -185,16 +199,19 @@
     state.n = back.n || state.n; $('#urgent').checked = back.urgent;
     renderType(); update();
   } else {
+    // Браузер мог восстановить форму (перезагрузка, «назад»): берём тип и «срочно» из неё и перерисовываем опции.
     state.n = CALC[state.svc].range ? CALC[state.svc].range.value : 0;
-    update();
+    state.urgent = $('#urgent').checked;
+    renderType(); update();
   }
 
   // Финальная форма: текст в буфер, бот в новой вкладке.
   $('#finalForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const text = $('#finalText').value.trim();
+    const copied = copy(text);   // до window.open: после ухода фокуса в новую вкладку браузер буфер не даст
     window.open(e.target.action, '_blank', 'noopener');
-    copy(text).then((ok) => toast(ok ? UI.copied : UI.opening));
+    copied.then((ok) => toast(ok ? UI.copied : UI.opening));
   });
 
   // ---------- демо Кордона ----------
